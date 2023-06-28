@@ -33,16 +33,32 @@ const AuthForm = () => {
             password: ''
         }
     });
-    
+
     // onSubmit
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
-        setIsLoading(true);   
+        setIsLoading(true);
+
+        if (variant === 'REGISTER') {
+            // Axios Register
+        }
+
+        if (variant === 'LOGIN') {
+            // NextAuth SignIn
+        }
     }
+
+    // socialAction
+    const socialAction = (action: string) => {
+        setIsLoading(true);
+
+        // NextAuth Social SignIn
+    } 
+
 
 
     return (
         <div>
-            AuthForm!
+            
         </div>
     )
 }

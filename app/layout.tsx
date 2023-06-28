@@ -6,6 +6,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Messenger Clone',
   description: 'Messenger Clone',
+  icons: {
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+  },
 }
 
 export default function RootLayout({

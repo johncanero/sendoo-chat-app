@@ -1,1 +1,1 @@
-<!-- 59:00 - https://www.youtube.com/watch?v=PGPGcKBpAk8 -->
+<!-- 1:18:06 - Next Auth SetUp - https://www.youtube.com/watch?v=PGPGcKBpAk8 -->

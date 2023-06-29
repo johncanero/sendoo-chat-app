@@ -2,7 +2,7 @@
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
-import { BsGoogle, BsMicrosoft } from 'react-icons/bs';
+import { BsGoogle, BsGithub } from 'react-icons/bs';
 
 import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
@@ -130,7 +130,7 @@ const AuthForm = () => {
                             onClick={() => socialAction('google')}
                         />
                         <AuthSocialButton
-                            icon={BsMicrosoft}
+                            icon={BsGithub}
                             onClick={() => socialAction('github')}
                         />
                     </div>

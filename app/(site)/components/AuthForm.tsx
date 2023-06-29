@@ -2,7 +2,7 @@
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
-import { BsGithub, BsGoogle } from 'react-icons/bs';
+import { BsGoogle, BsMicrosoft } from 'react-icons/bs';
 
 import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
@@ -126,12 +126,12 @@ const AuthForm = () => {
 
                     <div className="flex gap-2 mt-6">
                         <AuthSocialButton
-                            icon={BsGithub}
-                            onClick={() => socialAction('github')}
-                        />
-                        <AuthSocialButton
                             icon={BsGoogle}
                             onClick={() => socialAction('google')}
+                        />
+                        <AuthSocialButton
+                            icon={BsMicrosoft}
+                            onClick={() => socialAction('github')}
                         />
                     </div>
                 </div>
@@ -140,7 +140,7 @@ const AuthForm = () => {
                 <div className="flex justify-center gap-2 px-2 mt-6 text-sm text-gray-500">
                     {/* New to messenger */}
                     <div>
-                        {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
+                        {variant === 'LOGIN' ? 'New to Sendoo?' : 'Already have an account?'}
                     </div>
 
                     {/* Create an account */}

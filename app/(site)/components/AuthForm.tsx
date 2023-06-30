@@ -19,7 +19,7 @@ const AuthForm = () => {
     const [variant, setVariant] = useState<Variant>('LOGIN');
     const [isLoading, setIsLoading] = useState(false);
 
-    
+
     useEffect(() => {
         if (session?.status === 'authenticated') {
             router.push('/users');
@@ -58,6 +58,10 @@ const AuthForm = () => {
         if (variant === 'REGISTER') {
             // Axios Register
             axios.post('/api/register', data)
+                .then(() => signIn('credentials', {
+                    ...data,
+                    redirect: false,
+                }))
                 .catch(() => toast.error('Something went wrong!'))
                 .finally(() => setIsLoading(false))
         }
@@ -74,6 +78,8 @@ const AuthForm = () => {
 
                     if (callback?.ok) {
                         toast.success('Logged in!');
+                        router.push('/users')
+
                     }
                 })
                 .finally(() => setIsLoading(false));

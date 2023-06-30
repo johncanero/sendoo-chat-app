@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image"
+import { SessionProvider } from 'next-auth/react';
 
 import AuthForm from "./components/AuthForm"
 
@@ -18,7 +21,9 @@ export default function Home() {
             </div>
 
             {/* AuthForm */}
-            <AuthForm />
+            <SessionProvider>
+                <AuthForm />
+            </SessionProvider>
         </div>
     )
 }

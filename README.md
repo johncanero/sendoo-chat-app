@@ -1,1 +1,1 @@
-<!-- 1:40:06 - Next Auth SetUp - https://www.youtube.com/watch?v=PGPGcKBpAk8 -->
+<!-- 1:57:00 - Sidebar, Navigation and Layout - https://www.youtube.com/watch?v=PGPGcKBpAk8 -->

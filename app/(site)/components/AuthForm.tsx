@@ -105,7 +105,7 @@ const AuthForm = () => {
 
     return (
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
+            <div className="px-4 py-8 shadow md:bg-white sm:rounded-lg sm:px-10">
                 {/* Form */}
                 <form
                     className="space-y-6"

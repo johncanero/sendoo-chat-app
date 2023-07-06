@@ -79,7 +79,6 @@ const AuthForm = () => {
                     if (callback?.ok) {
                         toast.success('Logged in!');
                         router.push('/users')
-
                     }
                 })
                 .finally(() => setIsLoading(false));
@@ -89,7 +88,6 @@ const AuthForm = () => {
     // socialAction
     const socialAction = (action: string) => {
         setIsLoading(true);
-
         signIn(action, { redirect: false })
             .then((callback) => {
                 if (callback?.error) {

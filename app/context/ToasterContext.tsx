@@ -6,6 +6,6 @@ const ToasterContext = () => {
     return (
         <Toaster />
     );
-}
+};
 
 export default ToasterContext;

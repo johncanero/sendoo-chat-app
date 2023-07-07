@@ -38,12 +38,13 @@ const Form = () => {
 
     return (
         <div className="py-4 px-4 bg-white border-t flex items-center gap-2 lg:gap-4 w-full">
-            <HiPhoto size={30} className="text-sky-500" />
+            <HiPhoto size={30} className="text-amber-500" />
 
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex items-center gap-2 lg:gap-4 w-full"
             >
+                {/* MessageInput */}
                 <MessageInput
                     id="message"
                     register={register}
@@ -51,6 +52,14 @@ const Form = () => {
                     required
                     placeholder="Write a message"
                 />
+
+                {/* SubmitButton */}
+                <button
+                    type="submit"
+                    className="rounded-full p-2 bg-amber-500 cursor-pointer hover:bg-amber-600 transition">
+                    <HiPaperAirplane size={18} className="text-white"
+                    />
+                </button>
 
             </form>
         </div>

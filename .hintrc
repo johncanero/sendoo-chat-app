@@ -16,6 +16,12 @@
           "-webkit-text-size-adjust"
         ]
       }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "autocomplete-valid": "off"
+      }
     ]
   }
 }

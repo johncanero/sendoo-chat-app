@@ -26,7 +26,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     onClose,
     data,
 }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    const [confirmOpen, setConfirmOpen] = useState(false);
     const otherUser = useOtherUser(data);
 
     // joinedDate
@@ -52,19 +53,19 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
     return (
         <>
-            {/* <ConfirmModal
+            <ConfirmModal
                 isOpen={confirmOpen}
-                onClose={() => setConfirmOp en(false)}
-            /> */}
+                onClose={() => setConfirmOpen(false)}
+            />
             
-            <Modal 
+            {/* <Modal 
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
             >
                 <div className='bg-white p-5'>
                     <p>Hello Modal!</p>
                 </div>
-            </Modal>
+            </Modal> */}
 
             <Transition.Root show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -127,7 +128,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
                                                     {/* Delete */}
                                                     <div className="flex gap-10 my-8">
-                                                        <div onClick={() => setIsModalOpen(true)} className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75">
+                                                        <div onClick={() => setConfirmOpen(true)} className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75">
                                                             <div className="w-10 h-10 bg-neutral-100 rounded-full flex items-center justify-center">
                                                                 <IoTrash size={20} />
                                                             </div>

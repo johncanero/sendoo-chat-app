@@ -55,8 +55,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                         </Transition.Child>
                     </div>
                 </div>
-
-
             </Dialog>
         </Transition.Root>
     );

@@ -1,1 +1,1 @@
-<!-- 5:52:45 - Sidebar, Navigation and Layout - https://www.youtube.com/watch?v=PGPGcKBpAk8 --> 
+<!-- 6:01:00 - Settings functionality, Modal component - https://www.youtube.com/watch?v=PGPGcKBpAk8 --> 

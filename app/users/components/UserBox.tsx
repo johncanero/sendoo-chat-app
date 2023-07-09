@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { User } from "@prisma/client";
 
 import Avatar from "@/app/components/Avatar";
-// import LoadingModal from "@/app/components/modals/LoadingModal";
+import LoadingModal from "@/app/components/modals/LoadingModal";
 
 interface UserBoxProps {
     data: User
@@ -29,9 +29,9 @@ const UserBox: React.FC<UserBoxProps> = ({
 
     return (
         <>
-            {/* {isLoading && (
+            {isLoading && (
                 <LoadingModal />
-            )} */}
+            )}
             <div
                 onClick={handleClick}
                 className="relative flex items-center w-full p-3 space-x-3 transition bg-white rounded-lg cursor-pointer hover:bg-neutral-100"

@@ -7,6 +7,7 @@ import { Dialog, Transition } from '@headlessui/react'
 
 import useOtherUser from '@/app/hooks/useOtherUser';
 import Avatar from '@/app/components/Avatar';
+import AvatarGroup from '@/app/components/AvatarGroup';
 import Modal from '@/app/components/modals/Modal';
 import ConfirmModal from './ConfirmModal';
 
@@ -115,7 +116,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                             <div className="relative flex-1 px-4 mt-6 sm:px-6">
                                                 <div className="flex flex-col items-center">
                                                     <div className="mb-2">
-                                                        <Avatar user={otherUser} />
+                                                        {data.isGroup ? <AvatarGroup users={data.users} /> : <Avatar user={otherUser} />}
                                                     </div>
 
                                                     <div>

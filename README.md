@@ -1,1 +1,1 @@
-<!-- 7:43:00 - Settings functionality, Modal component - https://www.youtube.com/watch?v=PGPGcKBpAk8 --> 
+<!-- 7:59:00 - Settings functionality, Modal component - https://www.youtube.com/watch?v=PGPGcKBpAk8 --> 

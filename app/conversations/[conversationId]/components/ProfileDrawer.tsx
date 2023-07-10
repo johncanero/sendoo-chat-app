@@ -6,6 +6,8 @@ import { format } from 'date-fns';
 import { Dialog, Transition } from '@headlessui/react'
 
 import useOtherUser from '@/app/hooks/useOtherUser';
+import useActiveList from '@/app/hooks/useActiveList';
+
 import Avatar from '@/app/components/Avatar';
 import AvatarGroup from '@/app/components/AvatarGroup';
 import Modal from '@/app/components/modals/Modal';
@@ -41,6 +43,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
         return data.name || otherUser.name;
     }, [data.name, otherUser.name]);
 
+    const { members } = useActiveList();
+    const isActive = members.indexOf(otherUser?.email!) !== -1;
 
     // statusText
     const statusText = useMemo(() => {
@@ -48,8 +52,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
             return `${data.users.length} members`;
         }
 
-        return 'Active';
-    }, [data]);
+        return isActive ? 'Active' : 'Offline'
+    }, [data, isActive]);
 
 
     return (
@@ -63,7 +67,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
             >
-                <div className='bg-white p-5'>
+                <div className='p-5 bg-white'>
                     <p>Hello Modal!</p>
                 </div>
             </Modal> */}
@@ -129,8 +133,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
                                                     {/* Delete */}
                                                     <div className="flex gap-10 my-8">
-                                                        <div onClick={() => setConfirmOpen(true)} className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75">
-                                                            <div className="w-10 h-10 bg-neutral-100 rounded-full flex items-center justify-center">
+                                                        <div onClick={() => setConfirmOpen(true)} className="flex flex-col items-center gap-3 cursor-pointer hover:opacity-75">
+                                                            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-100">
                                                                 <IoTrash size={20} />
                                                             </div>
                                                             <div className="text-sm font-light text-neutral-600">
@@ -140,13 +144,13 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                     </div>
 
                                                     {/* data.isGroup */}
-                                                    <div className="w-full pb-5 pt-5 sm:px-0 sm:pt-0">
-                                                        <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
+                                                    <div className="w-full pt-5 pb-5 sm:px-0 sm:pt-0">
+                                                        <dl className="px-4 space-y-8 sm:space-y-6 sm:px-6">
                                                             {/* Emails */}
                                                             {data.isGroup && (
                                                                 <div>
                                                                     <dt
-                                                                        className="text-sm font-medium  text-gray-500 sm:w-40 sm:flex-shrink-0">
+                                                                        className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
                                                                         Emails
                                                                     </dt>
                                                                     <dd
@@ -159,7 +163,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                             {/* Email */}
                                                             {!data.isGroup && (
                                                                 <div>
-                                                                    <dt className="text-sm font-medium  text-gray-500 sm:w-40 sm:flex-shrink-0">
+                                                                    <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
                                                                         Email
                                                                     </dt>
                                                                     <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
@@ -173,7 +177,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                                 <>
                                                                     <hr />
                                                                     <div>
-                                                                        <dt className="text-sm font-medium  text-gray-500 sm:w-40 sm:flex-shrink-0">
+                                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
                                                                             Joined
                                                                         </dt>
                                                                         <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">

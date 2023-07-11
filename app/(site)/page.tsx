@@ -14,7 +14,7 @@ export default function Home() {
                     width="60"
                     className="w-auto mx-auto"
                     src="/images/icon.png"
-                    alt="Messenger Logo"
+                    alt="Sendoo Chat App Logo"
                 />
 
                 <h2 className="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">Sign in to your account</h2>

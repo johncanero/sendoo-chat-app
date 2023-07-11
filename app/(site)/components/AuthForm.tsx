@@ -11,7 +11,7 @@ import Button from "@/app/components/Button";
 import AuthSocialButton from "./AuthSocialButton";
 import { toast } from "react-hot-toast";
 
-type Variant = 'LOGIN' | 'REGISTER';
+type Variant = 'LOGIN' | 'REGISTER';   
 
 const AuthForm = () => {
     const session = useSession();
